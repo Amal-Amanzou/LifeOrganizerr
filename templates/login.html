@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Log in{% endblock %}
+{% block body_class %}auth-body{% endblock %}
+
+{% block body %}
+<main class="auth-wrap">
+    <div class="auth-card">
+
+        <a href="{{ url_for('index') }}" class="logo auth-logo">✿ LifeOrganizer</a>
+
+        <h1>Welcome back 🌸</h1>
+        <p class="auth-sub">Log in to continue organizing your life.</p>
+
+        {% include "_flash.html" %}
+
+        <form method="post" action="{{ url_for('login', next=request.args.get('next')) }}" class="auth-form">
+            <input type="hidden" name="_csrf" value="{{ csrf_token() }}">
+
+            <label for="identifier">Email or username</label>
+            <input type="text" id="identifier" name="identifier" value="{{ identifier }}"
+                   autocomplete="username" required autofocus>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password"
+                   autocomplete="current-password" required>
+
+            <label class="auth-remember">
+                <input type="checkbox" name="remember">
+                <span>Keep me logged in</span>
+            </label>
+
+            <button type="submit" class="auth-submit">Log in</button>
+        </form>
+
+        <p class="auth-switch">New here? <a href="{{ url_for('register') }}">Create an account</a></p>
+
+    </div>
+</main>
+{% endblock %}

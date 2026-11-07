@@ -1,0 +1,170 @@
+/* =====================================
+   AUTH PAGES + FLASH + LOGOUT
+   (uses the variables from style.css)
+===================================== */
+
+.auth-body {
+    min-height: 100vh;
+    background: linear-gradient(120deg, #eee5f7, #f9eaf0);
+}
+
+.auth-wrap {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 15px;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 430px;
+    background: white;
+    padding: 38px 34px;
+    border-radius: 25px;
+    box-shadow: 0 15px 50px var(--shadow-purple);
+}
+
+.auth-logo {
+    display: block;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.auth-card h1 {
+    font-size: 28px;
+    line-height: 1.25;
+    margin: 0 0 8px;
+    text-align: center;
+}
+
+.auth-sub {
+    color: var(--muted);
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.auth-form label {
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+.auth-form label small {
+    color: var(--muted);
+    font-weight: 400;
+}
+
+.auth-form input[type="text"],
+.auth-form input[type="email"],
+.auth-form input[type="password"] {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #e5dcec;
+    border-radius: 12px;
+    background: #fcfaff;
+    color: var(--text);
+    font-size: 14px;
+}
+
+.auth-form input:focus {
+    outline: none;
+    border-color: var(--lavender);
+    box-shadow: 0 0 0 3px rgba(167, 139, 206, 0.18);
+}
+
+.auth-form .auth-remember {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-weight: 400;
+    color: var(--muted);
+    cursor: pointer;
+}
+
+.auth-remember input {
+    accent-color: var(--purple);
+}
+
+.auth-submit {
+    margin-top: 18px;
+    padding: 14px;
+    border: none;
+    border-radius: 30px;
+    background: var(--lavender);
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.auth-submit:hover {
+    background: var(--purple);
+    transform: translateY(-2px);
+}
+
+.auth-switch {
+    margin-top: 22px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.auth-switch a {
+    color: var(--purple);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.auth-switch a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Flash messages ---------- */
+.flash-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.flash {
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 13px;
+}
+
+.flash-error   { background: #f9e8ed; color: #bd7794; }
+.flash-success { background: #edf4eb; color: #779273; }
+.flash-info    { background: var(--light-purple); color: var(--purple); }
+
+/* ---------- Logout button in the sidebar ---------- */
+.sidebar-bottom form {
+    margin: 0;
+}
+
+.logout-btn {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    color: var(--muted);
+    font-size: 13px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.logout-btn:hover {
+    background: white;
+    color: var(--purple);
+}

@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block title %}Task Manager{% endblock %}
+{% block page_title %}Task Manager 📝{% endblock %}
+{% block page_subtitle %}One task at a time, you've got this.{% endblock %}
+
+{% block content %}
+<section class="dashboard-welcome">
+    <span>STAY ORGANIZED</span>
+    <h2>Turn your to-do list into done.</h2>
+    <p>Click a status badge to change it: Pending → In Progress → Completed.</p>
+</section>
+
+<section class="task-stats">
+    <div class="stat-card">
+        <div class="stat-icon">📝</div>
+        <h3>Total Tasks</h3>
+        <h2>05</h2>
+        <p>All your tasks</p>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon">⏳</div>
+        <h3>In Progress</h3>
+        <h2>00</h2>
+        <p>Currently working on</p>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon">♡</div>
+        <h3>Completed</h3>
+        <h2>00</h2>
+        <p>Tasks completed</p>
+    </div>
+</section>
+
+<section class="task-panel">
+
+    <div class="page-heading">
+        <h2>All Tasks</h2>
+        <span>Keep going ✨</span>
+    </div>
+
+    <div class="task-row">
+        <div>
+            <h3>Study Python basics</h3>
+            <p>📚 Study</p>
+        </div>
+        <span class="priority high">High</span>
+        <span class="task-status">Pending</span>
+    </div>
+
+    <div class="task-row">
+        <div>
+            <h3>Complete LifeOrganizer Dashboard</h3>
+            <p>💻 Project</p>
+        </div>
+        <span class="priority high">High</span>
+        <span class="task-status">In Progress</span>
+    </div>
+
+    <div class="task-row">
+        <div>
+            <h3>Review Networking lessons</h3>
+            <p>🌐 Learning</p>
+        </div>
+        <span class="priority medium">Medium</span>
+        <span class="task-status">Pending</span>
+    </div>
+
+    <div class="task-row">
+        <div>
+            <h3>Prepare weekly study plan</h3>
+            <p>🗓️ Planning</p>
+        </div>
+        <span class="priority medium">Medium</span>
+        <span class="task-status">Pending</span>
+    </div>
+
+    <div class="task-row">
+        <div>
+            <h3>Read one chapter</h3>
+            <p>📖 Reading</p>
+        </div>
+        <span class="priority low">Low</span>
+        <span class="task-status">Completed</span>
+    </div>
+
+</section>
+{% endblock %}

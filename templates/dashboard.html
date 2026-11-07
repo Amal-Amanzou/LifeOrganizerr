@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block title %}Dashboard{% endblock %}
+{% block page_title %}Hello, {{ g.user.username }}! ☀️{% endblock %}
+{% block page_subtitle %}Let's make today productive.{% endblock %}
+
+{% block content %}
+<section class="dashboard-welcome">
+    <span>YOUR PERSONAL SPACE</span>
+    <h2>Organize your life, one day at a time.</h2>
+    <p>Plan your day, track your progress and achieve your goals.</p>
+</section>
+
+<h2 class="dashboard-section-title">Overview</h2>
+
+<section class="stats-grid">
+    <div class="stat-card">
+        <div class="stat-icon">📝</div>
+        <h3>My Tasks</h3>
+        <h2>05</h2>
+        <p>Tasks to complete</p>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon">♡</div>
+        <h3>Completed</h3>
+        <h2>12</h2>
+        <p>Tasks completed</p>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon">🎯</div>
+        <h3>My Goals</h3>
+        <h2>03</h2>
+        <p>Goals in progress</p>
+    </div>
+</section>
+
+<section class="focus-section">
+    <div class="focus-header">
+        <h2>Today's Focus ✨</h2>
+        <a href="{{ url_for('tasks') }}">View all</a>
+    </div>
+
+    <div class="focus-task">
+        <input type="checkbox" class="task-checkbox">
+        <div>
+            <h4>Study Python basics</h4>
+            <p>📚 Study · High priority</p>
+        </div>
+    </div>
+
+    <div class="focus-task">
+        <input type="checkbox" class="task-checkbox">
+        <div>
+            <h4>Complete LifeOrganizer Dashboard</h4>
+            <p>💻 Project · High priority</p>
+        </div>
+    </div>
+
+    <div class="focus-task">
+        <input type="checkbox" class="task-checkbox">
+        <div>
+            <h4>Review Networking lessons</h4>
+            <p>🌐 Learning · Medium priority</p>
+        </div>
+    </div>
+</section>
+
+<section class="progress-section">
+    <h2>Weekly Progress</h2>
+    <div class="progress-info">
+        <span>Small steps every day lead to big results.</span>
+        <span>65%</span>
+    </div>
+    <div class="progress-bar">
+        <div class="progress-fill" style="--progress: 65%"></div>
+    </div>
+</section>
+{% endblock %}

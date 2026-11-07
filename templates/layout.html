@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block body_class %}dashboard-body{% endblock %}
+
+{% block body %}
+<div class="dashboard-layout">
+
+<aside class="sidebar">
+    <a href="{{ url_for('index') }}" class="logo">✿ LifeOrganizer</a>
+
+    <div class="sidebar-menu">
+        <a href="{{ url_for('dashboard') }}" class="{{ 'active' if request.endpoint == 'dashboard' }}"><span>⌂</span> Dashboard</a>
+        <a href="{{ url_for('tasks') }}" class="{{ 'active' if request.endpoint == 'tasks' }}"><span>✓</span> Task Manager</a>
+        <a href="{{ url_for('habits') }}" class="{{ 'active' if request.endpoint == 'habits' }}"><span>♡</span> Habits</a>
+        <a href="{{ url_for('calendar') }}" class="{{ 'active' if request.endpoint == 'calendar' }}"><span>▦</span> Calendar</a>
+    </div>
+
+    <div class="sidebar-bottom">
+        <a href="{{ url_for('index') }}">← Back Home</a>
+        <form method="post" action="{{ url_for('logout') }}">
+            <input type="hidden" name="_csrf" value="{{ csrf_token() }}">
+            <button type="submit" class="logout-btn">⎋ Log out</button>
+        </form>
+    </div>
+</aside>
+
+<main class="dashboard-main">
+
+    <header class="dashboard-header">
+        <div>
+            <h1>{% block page_title %}{% endblock %}</h1>
+            <p>{% block page_subtitle %}{% endblock %}</p>
+        </div>
+        <div class="user-profile">
+            <div class="user-avatar" title="{{ g.user.username }}">{{ g.user.username[0]|upper }}</div>
+        </div>
+    </header>
+
+    {% include "_flash.html" %}
+
+    {% block content %}{% endblock %}
+
+</main>
+
+</div>
+{% endblock %}

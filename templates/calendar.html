@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+
+{% block title %}Calendar{% endblock %}
+{% block page_title %}My Calendar 🌸{% endblock %}
+{% block page_subtitle %}Plan your days and never miss a moment.{% endblock %}
+
+{% block content %}
+<section class="dashboard-welcome">
+    <span>PLAN YOUR TIME</span>
+    <h2>Make time for what matters.</h2>
+    <p>Keep your studies, tasks and personal activities organized.</p>
+</section>
+
+<section class="calendar-panel">
+
+    <div class="calendar-top">
+        <div>
+            <span>MY PLANNER</span>
+            <h2>November 2026</h2>
+        </div>
+        <div class="calendar-arrows">
+            <button type="button">‹</button>
+            <button type="button">›</button>
+        </div>
+    </div>
+
+    <div class="calendar-grid">
+
+        <div class="day-name">Mon</div>
+        <div class="day-name">Tue</div>
+        <div class="day-name">Wed</div>
+        <div class="day-name">Thu</div>
+        <div class="day-name">Fri</div>
+        <div class="day-name">Sat</div>
+        <div class="day-name">Sun</div>
+
+        <div class="calendar-day muted-day">26</div>
+        <div class="calendar-day muted-day">27</div>
+        <div class="calendar-day muted-day">28</div>
+        <div class="calendar-day muted-day">29</div>
+        <div class="calendar-day muted-day">30</div>
+        <div class="calendar-day muted-day">31</div>
+        <div class="calendar-day">1</div>
+
+        <div class="calendar-day">2</div>
+        <div class="calendar-day">3</div>
+        <div class="calendar-day">4</div>
+        <div class="calendar-day">5</div>
+        <div class="calendar-day">6</div>
+        <div class="calendar-day">7</div>
+        <div class="calendar-day">8</div>
+
+        <div class="calendar-day">9</div>
+        <div class="calendar-day">10</div>
+        <div class="calendar-day">11</div>
+        <div class="calendar-day">12</div>
+        <div class="calendar-day">13</div>
+        <div class="calendar-day">14</div>
+        <div class="calendar-day">15</div>
+
+        <div class="calendar-day">16</div>
+        <div class="calendar-day">17</div>
+        <div class="calendar-day">18</div>
+        <div class="calendar-day">19</div>
+        <div class="calendar-day">20</div>
+        <div class="calendar-day">21</div>
+        <div class="calendar-day">22</div>
+
+        <div class="calendar-day">23</div>
+        <div class="calendar-day">24</div>
+        <div class="calendar-day">25</div>
+        <div class="calendar-day">26</div>
+        <div class="calendar-day">27</div>
+        <div class="calendar-day">28</div>
+        <div class="calendar-day">29</div>
+
+        <div class="calendar-day">30</div>
+
+    </div>
+
+</section>
+
+<section class="calendar-events">
+    <h2>Upcoming Events</h2>
+
+    <div class="event-row">
+        <span class="event-date">09 NOV</span>
+        <div>
+            <h3>Python Study Session</h3>
+            <p>📚 10:00 AM · Learning</p>
+        </div>
+    </div>
+
+    <div class="event-row">
+        <span class="event-date pink-date">12 NOV</span>
+        <div>
+            <h3>Project Work</h3>
+            <p>💻 02:00 PM · LifeOrganizer</p>
+        </div>
+    </div>
+</section>
+{% endblock %}

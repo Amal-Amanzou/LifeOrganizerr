@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Create account{% endblock %}
+{% block body_class %}auth-body{% endblock %}
+
+{% block body %}
+<main class="auth-wrap">
+    <div class="auth-card">
+
+        <a href="{{ url_for('index') }}" class="logo auth-logo">✿ LifeOrganizer</a>
+
+        <h1>Create your account ✨</h1>
+        <p class="auth-sub">Start organizing your studies, habits and goals.</p>
+
+        {% include "_flash.html" %}
+
+        <form method="post" class="auth-form">
+            <input type="hidden" name="_csrf" value="{{ csrf_token() }}">
+
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" value="{{ form.username }}"
+                   autocomplete="username" minlength="3" maxlength="30"
+                   pattern="[A-Za-z0-9_]+" required autofocus>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" value="{{ form.email }}"
+                   autocomplete="email" required>
+
+            <label for="password">Password <small>(min. 8 characters)</small></label>
+            <input type="password" id="password" name="password"
+                   autocomplete="new-password" minlength="8" required>
+
+            <label for="confirm">Confirm password</label>
+            <input type="password" id="confirm" name="confirm"
+                   autocomplete="new-password" minlength="8" required>
+
+            <button type="submit" class="auth-submit">Create account</button>
+        </form>
+
+        <p class="auth-switch">Already have an account? <a href="{{ url_for('login') }}">Log in</a></p>
+
+    </div>
+</main>
+{% endblock %}

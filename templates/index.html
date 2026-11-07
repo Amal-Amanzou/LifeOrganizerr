@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+
+{% block title %}Student Planner{% endblock %}
+
+{% block body %}
+<header class="navbar">
+
+    <a href="{{ url_for('index') }}" class="logo">
+        <span class="logo-icon">✿</span>
+        LifeOrganizer
+    </a>
+
+    <nav>
+        <a href="#features">Features</a>
+        <a href="#about">About</a>
+    </nav>
+
+    {% if g.user %}
+    <a href="{{ url_for('dashboard') }}" class="nav-button">Dashboard</a>
+    {% else %}
+    <a href="{{ url_for('login') }}" class="nav-button">Log in</a>
+    {% endif %}
+
+</header>
+
+
+<main class="hero">
+
+    <section class="hero-content">
+
+        <span class="welcome-label">✨ YOUR STUDENT COMPANION</span>
+
+        <h1>
+            Make room for
+            <span>your dreams.</span>
+        </h1>
+
+        <p>
+            Organize your studies, manage your tasks,
+            track your goals and make every day count.
+            Your student life, beautifully organized.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="{{ url_for('dashboard') }}" class="start-btn">Get Started</a>
+            <a href="#about" class="secondary-button">Discover more</a>
+        </div>
+
+        <div class="hero-note">
+            <span>♡</span>
+            Small steps, big achievements.
+        </div>
+
+    </section>
+
+
+    <section class="hero-visual">
+
+        <div class="decor decor-one">✿</div>
+        <div class="decor decor-two">✧</div>
+
+        <div class="planner-card">
+
+            <div class="card-top">
+                <div>
+                    <span class="small-label">YOUR SPACE</span>
+                    <h2>Study Planner</h2>
+                </div>
+                <span class="flower">🌸</span>
+            </div>
+
+            <div class="date-box">
+                <span>YOUR DAILY REMINDER</span>
+                <h3>You've got this!</h3>
+                <p>One task at a time.</p>
+            </div>
+
+            <div class="task-preview">
+                <div class="task-icon">📚</div>
+                <div>
+                    <h4>Study Python</h4>
+                    <p>Learn something new</p>
+                </div>
+                <span class="check">✓</span>
+            </div>
+
+            <div class="task-preview">
+                <div class="task-icon">📝</div>
+                <div>
+                    <h4>Review lessons</h4>
+                    <p>Keep moving forward</p>
+                </div>
+                <span class="check">✓</span>
+            </div>
+
+            <div class="progress-area">
+                <div class="progress-text">
+                    <span>Daily motivation</span>
+                    <span>75%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<section class="features" id="features">
+
+    <div class="section-heading">
+        <span>EVERYTHING IN ONE PLACE</span>
+        <h2>Your student life, simplified.</h2>
+    </div>
+
+    <div class="feature-grid">
+
+        <article class="feature-card">
+            <span>📖</span>
+            <h3>Study Tasks</h3>
+            <p>Organize your lessons and assignments.</p>
+        </article>
+
+        <article class="feature-card">
+            <span>📅</span>
+            <h3>Academic Calendar</h3>
+            <p>Never miss an exam or deadline.</p>
+        </article>
+
+        <article class="feature-card">
+            <span>⏳</span>
+            <h3>Study Timer</h3>
+            <p>Focus on your studies with Pomodoro.</p>
+        </article>
+
+    </div>
+
+</section>
+
+
+<footer id="about">
+    Made with ♡ for students · LifeOrganizer
+</footer>
+{% endblock %}
